@@ -5,7 +5,6 @@ import android.app.Application;
 import android.support.v4.app.Fragment;
 
 import io.realm.Realm;
-import io.realm.RealmModel;
 import io.realm.RealmResults;
 import nightroomcreation.id.realmdemo.model.Book;
 
@@ -62,7 +61,7 @@ public class DBController {
     //clear all object from book class model
     public void clearAll() {
         realm.beginTransaction();
-        realm.delete(Book.class);
+        realm.clear(Book.class);
         realm.commitTransaction();
     }
 
@@ -78,7 +77,7 @@ public class DBController {
 
     //checking item of model `Book.class` is empty
     public boolean isBookEmpty() {
-        return !realm.isEmpty();
+        return !realm.allObjects(Book.class).isEmpty();
     }
 
     //query example

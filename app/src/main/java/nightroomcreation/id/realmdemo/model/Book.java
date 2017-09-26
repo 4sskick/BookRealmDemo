@@ -12,18 +12,18 @@ public class Book extends RealmObject {
     //starting to build table from model class
     //defining primary key of database
     @PrimaryKey
-    private int id;
+    private long id;
 
     private String title;
     private String description;
     private String author;
     private String imageUrl;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
